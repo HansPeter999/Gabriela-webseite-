@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>frei fühlen — Praxis Gabriela Rätzo (Druck)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+  <style>
+    /* Print-spezifische Anpassungen */
+    @page {
+      size: A4 portrait;
+      margin: 14mm 12mm;
+    }
+
+    html, body {
+      background: var(--paper) !important;
+    }
+
+    /* Force-Color für Druck (Hintergründe Bordeaux & Pergament beibehalten) */
+    * {
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      color-adjust: exact !important;
+    }
+
+    /* Header / Footer / Nav komplett ausblenden — wir bauen unsere eigene Druckstruktur */
+    .site-header, .site-footer, .nav-toggle {
+      display: none !important;
+    }
+
+    /* Hover-, Animations- & Klickeffekte aus */
+    .fade-up, .fade-up-d1, .fade-up-d2, .fade-up-d3 {
+      animation: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    .angebot-card, .card, .testimonial-card {
+      transition: none !important;
+    }
+    .angebot-card:hover, .card:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Sticky aufheben */
+    .site-header { position: static !important; }
+
+    /* Sektionsabstände im Druck reduzieren */
+    section {
+      padding: 18mm 0 !important;
+    }
+    section.tight, section.detail-hero {
+      padding: 12mm 0 !important;
+    }
+    section.quote-band {
+      padding: 14mm 0 !important;
+    }
+
+    /* Seitenumbrüche zwischen Hauptseiten */
+    .print-page {
+      break-before: page;
+      page-break-before: always;
+    }
+    .print-page:first-of-type {
+      break-before: auto;
+      page-break-before: auto;
+    }
+
+    /* Innerhalb von Karten/Listen nicht umbrechen */
+    .angebot-card,
+    .testimonial-card,
+    .card,
+    .werdegang-row,
+    .kontakt-row,
+    .info-strip .item,
+    .meta-item,
+    blockquote,
+    h1, h2, h3 {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    /* Hero im Druck etwas kompakter */
+    .hero {
+      padding: 12mm 0 !important;
+    }
+    .hero .praxis-name {
+      font-size: 4.6rem !important;
+    }
+
+    /* Image placeholder schöner im Druck */
+    .image-ph {
+      box-shadow: none !important;
+    }
+
+    /* Buttons & Formular im Druck nicht zeigen — sie sind nicht klickbar im PDF */
+    .form, .submit-row, button.btn, .btn {
+      display: none !important;
+    }
+
+    /* Stattdessen Kontaktinfo-Block prominenter zeigen */
+    .kontakt-grid {
+      grid-template-columns: 1fr !important;
+    }
+    .kontakt-info {
+      max-width: 100%;
+    }
+
+    /* Kapitel-Trenner */
+    .print-section-divider {
+      page-break-before: always;
+      break-before: page;
+    }
+
+    /* Print-Cover */
+    .print-cover {
+      min-height: 270mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 30mm 20mm;
+      background: var(--paper);
+    }
+    .print-cover .praxis-name {
+      font-family: var(--serif);
+      font-size: 6rem;
+      line-height: 0.95;
+      font-weight: 400;
+      margin: 1rem 0 1.5rem;
+    }
+    .print-cover .praxis-name .second {
+      font-style: italic;
+      color: var(--bordeaux);
+      display: block;
+      margin-left: 60px;
+    }
+    .print-cover .praxis-name .first { display: block; }
+
+    /* Toc/Inhalt */
+    .print-toc {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .print-toc-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px dotted var(--line);
+      font-family: var(--serif);
+      font-size: 1.2rem;
+    }
+    .print-toc-row .num {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      min-width: 40px;
+    }
+    .print-toc-row .ttl { flex: 1; padding: 0 16px; }
+    .print-toc-row .pg {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--ink-mute);
+    }
+
+    /* Bei Druck Detail-CTA-Sektionen ausblenden (nicht relevant) */
+    .section-cta { display: none !important; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel" src="components.jsx"></script>
+  <script type="text/babel" src="data.jsx"></script>
+  <script type="text/babel" src="page-home.jsx"></script>
+  <script type="text/babel" src="page-others.jsx"></script>
+
+  <script type="text/babel" data-presets="react">
+    function PrintCover() {
+      return (
+        <section className="print-cover">
+          <div style={{ marginBottom: 30, color: 'var(--gold)' }}>
+            <AkanthusBand width={520} />
+          </div>
+          <div style={{ fontFamily: 'var(--mono)', fontSize: '0.78rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: 'var(--gold)' }}>
+            Praxis · Gabriela Rätzo · Steinen
+          </div>
+          <h1 className="praxis-name">
+            <span className="first">frei</span>
+            <span className="second">fühlen</span>
+          </h1>
+          <p style={{ fontFamily: 'var(--serif)', fontStyle: 'italic', fontSize: '1.5rem', color: 'var(--ink-soft)', maxWidth: 520, lineHeight: 1.4 }}>
+            Du darfst einfach sein, durchatmen, loslassen, vertrauen — dich bewegen und berühren lassen, dich geborgen fühlen.
+          </p>
+          <div style={{ marginTop: 50, color: 'var(--gold)' }}>
+            <AkanthusBand width={420} />
+          </div>
+          <div style={{ marginTop: 60, fontFamily: 'var(--serif)', fontSize: '1.1rem', color: 'var(--ink)', lineHeight: 1.7 }}>
+            6422 Steinen<br/>
+            079 744 74 68 · kontakt@frei-fuehlen.ch
+          </div>
+        </section>
+      );
+    }
+
+    function PrintTOC() {
+      const rows = [
+        { n: '01', t: 'Willkommen — Praxis & Haltung', p: '3' },
+        { n: '02', t: 'Angebote · Übersicht', p: '5' },
+        { n: '03', t: 'Thai-Massage', p: '7' },
+        { n: '04', t: 'LomiLomi-Massage', p: '9' },
+        { n: '05', t: 'SensualFlow-Massage', p: '11' },
+        { n: '06', t: 'freifühlen-Massage', p: '13' },
+        { n: '07', t: 'Buteyko-Atmung', p: '15' },
+        { n: '08', t: 'Gesprächs-Begleitung', p: '17' },
+        { n: '09', t: 'Über mich · Gabriela Rätzo', p: '19' },
+        { n: '10', t: 'Werdegang & Weiterbildungen', p: '21' },
+        { n: '11', t: 'Kontakt', p: '24' },
+      ];
+      return (
+        <section className="print-page" style={{ padding: '24mm 0' }}>
+          <div className="container-narrow">
+            <div className="eyebrow" style={{ justifyContent: 'center', display: 'flex', margin: '0 auto 20px' }}>Inhalt</div>
+            <h2 style={{ textAlign: 'center', marginBottom: 30, fontFamily: 'var(--serif)', fontWeight: 400 }}>Inhaltsverzeichnis</h2>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 30, color: 'var(--gold)' }}>
+              <AkanthusBand width={360} />
+            </div>
+            <div className="print-toc">
+              {rows.map(r => (
+                <div key={r.n} className="print-toc-row">
+                  <span className="num">{r.n}</span>
+                  <span className="ttl">{r.t}</span>
+                  <span className="pg">S. {r.p}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      );
+    }
+
+    function NoopNav() { return () => {}; }
+
+    function PrintApp() {
+      const navigate = NoopNav();
+      return (
+        <>
+          <PrintCover />
+          <PrintTOC />
+
+          <div className="print-page">
+            <HomePage navigate={navigate} />
+          </div>
+
+          <div className="print-page">
+            <AngebotePage navigate={navigate} />
+          </div>
+
+          {ANGEBOTE.map(a => (
+            <div key={a.id} className="print-page">
+              <AngebotDetailPage id={a.id} navigate={navigate} />
+            </div>
+          ))}
+
+          <div className="print-page">
+            <UeberMichPage navigate={navigate} />
+          </div>
+
+          <div className="print-page">
+            <FreiFuehlenPage navigate={navigate} />
+          </div>
+
+          <div className="print-page">
+            <KontaktPage navigate={navigate} />
+          </div>
+        </>
+      );
+    }
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));
+    root.render(<PrintApp />);
+
+    // Auto-print: warten auf Fonts + Render
+    (async function() {
+      try {
+        if (document.fonts && document.fonts.ready) {
+          await document.fonts.ready;
+        }
+      } catch(e) {}
+      // Babel + React-Render brauchen Zeit
+      await new Promise(r => setTimeout(r, 1200));
+      window.print();
+    })();
+  </script>
+</body>
+</html>
