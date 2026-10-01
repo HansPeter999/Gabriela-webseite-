@@ -64,7 +64,7 @@ function HomePage({ navigate }) {
  <div className="container">
  <div className="hero-grid">
  <div className="fade-up">
- <div className="eyebrow">Praxis · Gabriela Rätzo · Steinen</div>
+ <div className="eyebrow">Praxis · Gabriela Rätzo · Sattel</div>
  <h1 className="praxis-name">
  <span className="first">frei</span>
  <span className="second">fühlen</span>
@@ -73,7 +73,7 @@ function HomePage({ navigate }) {
  Über vier Jahrzehnte Erfahrung in Körperarbeit, Bewegung und Begleitung — für Menschen, die bei Anspannung, Erschöpfung<br/>oder innerer Unruhe achtsame Unterstützung suchen.
  </p>
  <p className="lead" style={{ marginTop: '1rem' }}>
- Du darfst bei mir dich selbst sein, durchatmen<br/>und einfach loslassen.
+ Du darfst bei mir einfach durchatmen, dich berühren lassen und dich selbst sein.
  </p>
  <div className="hero-cta">
               <button className="btn btn-ghost" onClick={() => document.getElementById('wobei-ich-dich-begleiten-kann')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -91,7 +91,7 @@ function HomePage({ navigate }) {
  <ImagePlaceholder
  bgClass="portrait-gabriela"
  alt="Gabriela Rätzo"
- aspect="949/1385"
+ aspect="1/1"
  />
  </div>
  </div>
@@ -103,7 +103,7 @@ function HomePage({ navigate }) {
  <div className="info-strip">
  <div className="item">
  <span className="lbl">Praxis</span>
- <span className="val">6422 Steinen</span>
+ <span className="val">Praxisgemeinschaft<br/>Schlagstrasse 66<br/>6417 Sattel</span>
  </div>
  <div className="item">
  <span className="lbl">Pro Stunde</span>
@@ -156,13 +156,10 @@ function HomePage({ navigate }) {
  {showMore && (
  <>
  <p className="t-body-lg">
- In meiner Arbeit verbinde ich körperorientierte Begleitung, achtsame Berührung, Bewegung, Atem und Gespräch. Daraus entsteht eine individuell abgestimmte Begleitung, die sich an deiner Situation, deinem Körper, deinem Tempo und deinen Bedürfnissen orientiert.
+ In meiner Arbeit verbinde ich achtsame Berührung, Bewegung, Atem und Gespräch. Daraus entsteht eine individuell abgestimmte Begleitung, die sich an deiner Situation, deinem Körper, deinem Tempo und deinen Bedürfnissen orientiert.
  </p>
  <p className="t-body-lg">
- Durch meine langjährige Erfahrung in Akutpsychiatrie und meine aktuelle Tätigkeit in einer Klinik für Burnout, Schlafstörung, Depression und Angststörung begleite ich Menschen achtsam, verantwortungsvoll und individuell.
- </p>
- <p className="t-body-lg">
- Du kommst zu mir, wenn du dir eine Begleitung wünschst, die nicht nur einzelne Beschwerden betrachtet, sondern dich als ganzen Menschen wahrnimmt.
+ Durch meine langjährige Erfahrung in Akutpsychiatrie sowie in einer Klinik für Burnout, Schlafstörung, Depression und Angststörung begleite ich Menschen achtsam, verantwortungsvoll und individuell.
  </p>
  </>
  )}
@@ -209,8 +206,7 @@ function HomePage({ navigate }) {
  </div>
  </section>
 
- {/* 5 · EINLADUNG, Nutzen / emotionaler Anker */}
- <section className="bg-paper-warm">
+ <section className="bg-paper-warm" id="einladung" style={{ scrollMarginTop: 90 }}>
  <div className="container-narrow" style={{ textAlign: 'center' }}>
  <div className="eyebrow" style={{ justifyContent: 'center' }}>Einladung</div>
  <h2 style={{ marginBottom: '1.6rem' }}>
@@ -338,7 +334,7 @@ function KontaktSection({ navigate }) {
  </div>
  <div className="kontakt-row">
  <span className="lbl">Praxis</span>
- <span className="val">Die genaue Adresse teile ich Ihnen gerne nach der Kontaktaufnahme mit.<br/>Der Standort befindet sich in 6422 Steinen.</span>
+ <span className="val">Praxisgemeinschaft<br/>Schlagstrasse 66<br/>6417 Sattel</span>
  </div>
  <div className="kontakt-row" style={{ borderBottom: 'none' }}>
  <span className="lbl">Bezahlung</span>

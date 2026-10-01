@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>frei fühlen — Praxis Gabriela Rätzo</title>
-  <meta name="description" content="frei fühlen — Praxis von Gabriela Rätzo in Steinen. Thai-, LomiLomi- und SensualFlow-Massage, Buteyko-Atmung und Gesprächs-Begleitung." />
+  <meta name="description" content="frei fühlen — Praxis von Gabriela Rätzo in Sattel. Thai-, LomiLomi- und SensualFlow-Massage, Buteyko-Atmung und Gesprächs-Begleitung." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -63,6 +63,8 @@
       else if (route === 'ueber-mich') page = <UeberMichPage navigate={navigate} />;
       else if (route === 'frei-fuehlen') page = <FreiFuehlenPage navigate={navigate} />;
       else if (route === 'testimonials') page = <TestimonialsPage navigate={navigate} />;
+      else if (route === 'empfehlungen') page = <EmpfehlungenPage navigate={navigate} />;
+      else if (route === 'praxisraum') page = <PraxisraumPage navigate={navigate} />;
       else if (route === 'kontakt') page = <KontaktPage navigate={navigate} />;
       else page = <HomePage navigate={navigate} />;
 

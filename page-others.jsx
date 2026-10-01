@@ -50,18 +50,6 @@ function AngebotePage({ navigate }) {
  <Sentences text="Bezahlung in Bar oder per Twint. Eine Abrechnung über die Krankenkasse ist nicht möglich. Terminstornierungen in weniger als 24 Stunden werden voll verrechnet." />
  </p>
  </div>
- <div className="card">
- <h3 style={{ marginBottom: '0.6rem' }}>Praxisraum</h3>
- <p style={{ margin: 0 }}>
- <Sentences text="Stilvoll eingerichtet, ruhig und warm. Eine Dusche ist vorhanden, alle Pflegeprodukte inkl. Haarföhn stehen dir zur Verfügung." />
- </p>
- </div>
- <div className="card">
- <h3 style={{ marginBottom: '0.6rem' }}>Behandlungsorte</h3>
- <p style={{ margin: 0 }}>
- <Sentences text="Die Körperarbeit findet entweder auf dem grossen Boden-Futon oder auf der Massageliege statt, beides beheizbar. Im Gesprächsbereich können wir uns austauschen." />
- </p>
- </div>
  </div>
  </div>
  </section>
@@ -222,7 +210,7 @@ function AngebotDetailPage({ id, navigate }) {
 /* ========== Über mich Seite ========== */
 function UeberMichPage({ navigate }) {
  const werdegang = [
- { y: '2024 / 2026', t: 'Diplomlehrgang Thai Yoga Massage Basic', i: 'Sunshine Network · International Society of Traditional Thai Yoga Massage' },
+ { y: '2024 / 2026', t: 'Diplomlehrgang Thai Yoga Massage', i: 'Sunshine Network · International Society of Traditional Thai Yoga Massage' },
  { y: '2020', t: 'Fachfrau Gesundheit EFZ Nachholbildung für Erwachsene', i: '' },
  { y: '2014', t: 'Diplomlehrgang Sexologische Körperarbeit ISSB', i: 'Institut für Somatische & Sexologische Bildung ISSB' },
  { y: '2009', t: 'Klientzentrierte Persönlichkeitsberaterin FSB · Kurs- und Seminarleiterin FSB', i: 'Frauenseminar Bodensee' },
@@ -236,8 +224,7 @@ function UeberMichPage({ navigate }) {
  'Fortlaufende Weiterbildungen in Psychiatrie und Somatik',
  'Ernährung und Metabolische Psychiatrie · Seminare und Selbststudium',
  'Zertifizierte Buteyko-Expertin i.A. · NHK Institut',
- 'Aggressionsmanagement Basiskurs',
- 'Psychiatrische Klinik Zugersee',
+ 'Aggressionsmanagement Basiskurs · Psychiatrische Klinik Zugersee',
  'Ohrakupunktur NADA Basic 1 und 2 · National Acupuncture Detoxification Association',
  'Esalen Massage · European Institute of Esalen Massage',
  'LomiLomi Massage und Sensual BodyFlow Massage · ISSB / Zentrum Bodyfeet',
@@ -272,12 +259,12 @@ function UeberMichPage({ navigate }) {
  <div className="detail-content">
  <h2>Mein beruflicher roter Faden</h2>
  <p>
- Seit einigen Jahren arbeite ich hauptberuflich in der Psychiatrie und begleitete Patientinnen und Patienten in Krisen sowie in herausfordernden Lebenssituationen. Aktuell bin ich Teil des pflegetherapeutischen Teams in einer Klinik mit den Schwerpunkten Burnout, Schlafstörungen, Depressionen und Angststörungen.
+ Ergänzend zu meiner vielseitigen Ausbildung und Erfahrung in Körperarbeit, habe ich als Fachfrau Gesundheit einige Jahre hauptberuflich in Psychiatrischen Kliniken gearbeitet. Dabei durfte ich PatientInnen während Krisen und sehr herausfordernden Lebensituationen durch intensive Bezugspflegearbeit begleiten.
  </p>
 
  <h2>Mein Leben</h2>
  <p>
- Reich an Lebenserfahrung, innehaltend reflektiert, bei mir selbst angekommen und gleichzeitig immer noch jung, energievoll und nach neuen Begegnungen suchend. Das Wichtigste in meinem erfüllten Leben sind meine drei erwachsenen Söhne. Dafür bin ich tief dankbar und täglich aufs Neue berührt.
+ Reich an Lebenserfahrung, innehaltend reflektiert, bei mir selbst angekommen und gleichzeitig immer noch jung fühlend und energievoll. Das Wichtigste in meinem erfüllten Leben sind meine drei erwachsenen Söhne. Dafür bin ich tief dankbar und täglich aufs Neue berührt.
  </p>
  <p>
  Ich habe viel Glück und Freude erfahren dürfen und ich musste tiefe persönliche Krisen durchleben. Tanzend an der Sonne und tastend in der Dunkelheit.
@@ -431,6 +418,84 @@ function TestimonialsPage({ navigate }) {
  );
 }
 
+/* ========== Praxisraum ========== */
+function PraxisraumPage({ navigate }) {
+  return (
+    <main>
+      <section className="detail-hero">
+        <div className="container-narrow" style={{ textAlign: 'center' }}>
+          <div className="eyebrow" style={{ justifyContent: 'center' }}>Praxisraum</div>
+          <h1>Praxisraum</h1>
+          <p className="t-lead" style={{ margin: '1.5rem auto 0', textAlign: 'center' }}>
+            Die neue, stilvolle und lichtdurchflutete Praxisloft strahlt Wärme und Ruhe aus.<br/>
+            Im grossen Badezimmer mit Dusche findest du alles, was du brauchst, um dich zu erfrischen.
+          </p>
+        </div>
+      </section>
+      <section style={{ paddingTop: 0 }}>
+        <div className="container">
+          <figure className="praxis-figure">
+            <div className="praxis-bg" role="img" aria-label="Praxisraum"></div>
+            <figcaption>Illustration</figcaption>
+          </figure>
+        </div>
+      </section>
+      <KontaktSection navigate={navigate} />
+    </main>
+  );
+}
+
+/* ========== Empfehlungen ========== */
+const EMPF_BEGLEITUNG = [
+  { name: 'Die Wandler', desc: 'Einzelperson & Unternehmensberatung', url: 'https://www.die-wandler.ch/' },
+  { name: 'ChiGim · Chantal Ege', desc: 'Yoga & Qi Gong', url: 'https://chigim.ch/chigim/' },
+  { name: 'Mind Movement', desc: 'Therapeutisches Boxen & Psychologie', url: 'https://mind-movement.ch/angebote' },
+  { name: 'Lukas Ebneter', desc: 'Somatic Experiencing', url: 'https://www.lukasebneter.ch/angebot' },
+];
+const EMPF_AUSBILDUNG = [
+  { name: 'Source Massage-Fachschule', desc: 'Massage-Ausbildung', url: 'https://source-massage-fachschule.ch/' },
+  { name: 'Buteyko Schweiz', desc: 'Buteyko-Atemmethode', url: 'https://www.buteyko-schweiz.ch/die-buteyko-methode/' },
+  { name: 'Thai Massage Vacanza', desc: 'Thaimassage-Kurse', url: 'https://www.thaimassagevacanza.ch/' },
+  { name: 'Sunshine House', desc: 'Thaimassage-Schule', url: 'https://www.thaimassage.gr/' },
+];
+function EmpfList({ items }) {
+  return (
+    <div>
+      {items.map(e => (
+        <a key={e.url} className="empf-item" href={e.url} target="_blank" rel="noreferrer">
+          <span className="empf-name">{e.name}</span>
+          <span className="empf-desc">{e.desc}</span>
+          <span className="empf-arrow">↗</span>
+        </a>
+      ))}
+    </div>
+  );
+}
+function EmpfehlungenPage({ navigate }) {
+  return (
+    <main>
+      <section className="detail-hero">
+        <div className="container-narrow" style={{ textAlign: 'center' }}>
+          <h1>Meine persönlichen Empfehlungen</h1>
+        </div>
+      </section>
+      <section style={{ paddingTop: 0 }}>
+        <div className="container-narrow">
+          <div className="empf-group">
+            <EmpfList items={EMPF_BEGLEITUNG} />
+          </div>
+          <hr className="empf-divider" />
+          <div className="empf-group">
+            <EmpfList items={EMPF_AUSBILDUNG} />
+          </div>
+        </div>
+      </section>
+      <KontaktSection navigate={navigate} />
+    </main>
+  );
+}
+window.EmpfehlungenPage = EmpfehlungenPage;
+
 /* ========== Kontakt-Seite (eigenständig) ========== */
 function KontaktPage({ navigate }) {
  return (
@@ -457,3 +522,4 @@ window.UeberMichPage = UeberMichPage;
 window.FreiFuehlenPage = FreiFuehlenPage;
 window.TestimonialsPage = TestimonialsPage;
 window.KontaktPage = KontaktPage;
+window.PraxisraumPage = PraxisraumPage;

@@ -31,7 +31,7 @@ const ANGEBOTE = [
  short: 'Eine Ganzkörper-Massage mit langen, fliessenden Streichbewegungen, eingebettet in ein wunderschönes Ritual.',
  available: true,
  body: {
- einordnung: 'Die hawaiianische LomiLomi ist eine Ganzkörper-Massage, welche auf uraltem Wissen und den Lebensweisheiten Hawaiis beruht. Eingebettet in ein wunderschönes Ritual, erlebst du sanfte Berührung, tiefe Entspannung und liebevolle Zuwendung.',
+ einordnung: 'Die hawaiianische LomiLomi ist eine Ganzkörper-Massage, welche auf uraltem Wissen und den Lebensweisheiten Hawaiis beruht. Du erlebst sanfte Berührung, tiefe Entspannung und liebevolle Zuwendung.',
  ablauf: 'Du wirst auf der Liege massiert. Mit duftendem warmem Öl gleiten meine Hände und Unterarme mit sanft-tiefem Druck über und gleichzeitig unter deinen Körper. Durch lange Streichbewegungen entsteht eine ruhige Harmonie, der Körper schwingt energetisch mit. Deine Intimzone wird mit einem leichten Tuch bedeckt und nicht berührt.',
  erwartung: 'Diese wundervoll entspannende Massage kann dich in dein natürliches Gleichgewicht bringen und zu mehr Ausgeglichenheit in Körper und Seele führen. Du erlebst eine umhüllende Geborgenheit und Sinnlichkeit. Bei der LomiLomi darfst du dich fallen lassen, in eine Schwerelosigkeit des eigenen Seins, der inneren Ruhe und der Freiheit.',
  fuerWen: [
@@ -51,10 +51,10 @@ const ANGEBOTE = [
  short: 'Eine ganzheitliche Massage in einem geschützten, achtsamen Rahmen, für ein bewusstes Wiederfinden des eigenen Körpers.',
  available: true,
  body: {
- einordnung: 'Die SensualFlow-Massage ist eine Kunst der fliessenden, sinnlichen Berührungen, bei denen auch absichtslose intime Berührungen auf eine sehr natürliche Weise miteinbezogen werden. Eingebettet in ein wunderschönes Ritual, erlebst du sanfte Berührung, tiefe Entspannung und liebevolle Zuwendung. Diese ganzheitliche und energetisierende Massage kann dich in dein natürliches Gleichgewicht bringen.',
+ einordnung: 'Die SensualFlow-Massage ist eine Kunst der fliessenden, sinnlichen Berührungen, bei denen auch absichtslose intime Berührungen auf eine sehr natürliche Weise miteinbezogen werden. Du erlebst sanfte Berührung, tiefe Entspannung und liebevolle Zuwendung.',
  ablauf: 'Du wirst auf der warmen Liege massiert und darfst im Verlauf der Massage völlig unbedeckt sein. Ich bin behutsam, achtsam und respektiere zu jeder Zeit deine persönlichen Grenzen. Mit duftendem warmem Öl gleiten meine Hände und Unterarme mit sanftem, tiefem Druck über und gleichzeitig unter deinen Körper. Durch lange Streichbewegungen entsteht eine ruhige Harmonie.',
  erwartung: 'Du darfst dich fallen lassen, in eine Schwerelosigkeit des eigenen Seins, der inneren Ruhe, und deinen Körper ganz fühlen und feiern. Diese Massage kann dir helfen, deinen Körper, deine Sinnlichkeit und deine Körperweisheit neu zu entdecken.',
- hinweis: 'Wir besprechen Wünsche und Grenzen vorab in Ruhe. Deine Würde und Sicherheit haben jederzeit Vorrang.',
+ hinweis: 'Jeder Bereich deines Körpers wird im gleichen Sinne berührt, jedoch finden dabei keine zielgerichteten erotischen Intimmassagen statt.',
  fuerWen: [
  'Menschen, die ihren Körper bewusst und ganzheitlich spüren möchten',
  'Wenn du Sinnlichkeit als natürlichen Teil von dir erleben möchtest',
@@ -108,7 +108,7 @@ const ANGEBOTE = [
  { t: 'Öffnung der Blutgefässe', d: 'Die Buteyko-Atmung wirkt gefässerweiternd. Durchblutung und Sauerstoffversorgung verbessern sich, der Blutdruck kann sinken.' }
  ],
  hinweis: 'Die Buteyko-Methode ersetzt keine medizinische Behandlung und versteht sich ausdrücklich als Ergänzung. Bei gesundheitlichen Beschwerden bitte ärztlich abklären.',
- meta: { dauer: 'ab Dezember 2026', preis: 'CHF 140.– / Std.', ort: 'Praxis Steinen' }
+ meta: { dauer: 'ab Dezember 2026', preis: 'CHF 140.– / Std.', ort: 'Praxis Sattel' }
  }
  },
  {
@@ -141,7 +141,7 @@ const TESTIMONIALS = [
  {
  name: 'Sandra',
  context: 'SensualFlow-Massage',
- text: 'Letzte Woche durfte ich eine SensualFlow-Massage bei dir empfangen. Ich war zu Beginn noch ein wenig unsicher, weil ich sowas noch nie hatte. Die tollen Atem- und Visualisierungs-Übungen, deine angenehme warme Stimme und überhaupt das ganze Ambiente in deinem schönen Raum haben mir geholfen beim Entspannen und Einlassen. Ich konnte mich dann unter deinen Händen völlig fallenlassen, kam in einen Zustand von totaler Geborgenheit und Sinnlichkeit und es fühlte sich völlig natürlich und wunderschön an. Deine magischen Berührungen kommen wirklich von Herzen und du hast eine unbeschreibliche Intuition. Ja, du hast mich wirklich zutiefst berührt, an Körper und Seele, und deine super Gesichtsmassage zu Beginn war ebenfalls einzigartig, ich bin sogar kurz weggedöst! Ich bin danach geschwebt, konnte nicht aufhören zu lächeln, und dieses erfüllte Gefühl begleitet mich immer noch. Jetzt weiss ich, was du meintest mit nährenden Berührungen, ich danke dir von Herzen dafür!'
+ text: 'Letzte Woche durfte ich eine SensualFlow-Massage bei dir empfangen. Ich war zu Beginn noch ein wenig unsicher, weil ich sowas noch nie hatte. Es fühlte sich völlig natürlich und wunderschön an. Deine magischen Berührungen kommen wirklich von Herzen und du hast eine unbeschreibliche Intuition. Ja, du hast mich wirklich zutiefst berührt, an Körper und Seele, und deine super Gesichtsmassage zu Beginn war ebenfalls einzigartig, ich bin sogar kurz weggedöst! Ich bin danach geschwebt, konnte nicht aufhören zu lächeln, und dieses erfüllte Gefühl begleitet mich immer noch. Jetzt weiss ich, was du meintest mit nährenden Berührungen, ich danke dir von Herzen dafür!'
  },
  {
  name: 'Dave',
@@ -151,7 +151,7 @@ const TESTIMONIALS = [
  {
  name: 'Manuel',
  context: 'LomiLomi-Massage',
- text: 'Liebe Gabriela, ich durfte gestern bei dir eine wundersame LomiLomi-Massage empfangen. Danke vielmals! Es war eine unglaubliche Erfahrung, wie ich dies in einer Massage noch nie erlebt habe. Es war tatsächlich ein ganzes Ritual mit Atemanleitung, Meditation, toller Musik und tropischen Düften. Ich spüre noch heute, wie du mit deinen warmen eingeölten Armen über und unter meinem Körper gegleitet bist und mich sprichwörtlich umhüllt und auf Händen getragen hast. Das hat sich so toll angefühlt, auch das Schaukeln und Gelenke lockern war sehr befreiend. Es war eine unglaublich tiefe Erfahrung, die ich bei dir machen durfte, und die ich mir gerne bald wieder gönnen werde.'
+ text: 'Liebe Gabriela, ich durfte gestern bei dir eine LomiLomi-Massage geniessen. Danke vielmals! Es war eine unglaubliche Erfahrung, wie ich dies in einer Massage noch nie erlebt habe. Es war tatsächlich ein ganzes Ritual mit Atemanleitung, Meditation, toller Musik und tropischen Düften. Ich spüre noch heute, wie du mit deinen warmen eingeölten Armen über und unter meinem Körper gegleitet bist und mich sprichwörtlich umhüllt und auf Händen getragen hast. Das hat sich so toll angefühlt, auch das Schaukeln und Gelenke lockern war sehr befreiend. Es war eine unglaublich tiefe Erfahrung, die ich bei dir machen durfte, und die ich mir gerne bald wieder gönnen werde.'
  },
  {
  name: 'Ralph',
@@ -171,12 +171,12 @@ const TESTIMONIALS = [
  {
  name: 'Peter',
  context: 'SensualFlow-Massage',
- text: 'Liebe Gabriela, wieder zu Hause möchte ich dir nochmals recht herzlich danken für die wundervolle, herzlich-sinnliche Session, die ich heute bei dir empfangen durfte. Auf dem Nachhauseweg im Zug hatte ich den Eindruck, dass alle Menschen, denen ich begegnet bin, mir meine Zufriedenheit ansehen würden. Es hat sich absolut gelohnt, diesen langen Weg mit ÖV zu machen! Ich habe mich bei dir und in deinem wunderschönen Raum während der ganzen Massage super aufgehoben und wohl gefühlt und mich total entspannen können. Alles war stimmig und du strahlst eine so tolle Wärme und Energie aus. Es war ein einmaliges Erlebnis, das ich so noch nie erfahren habe, ich freue mich darauf, dein Angebot wieder einmal in Anspruch zu nehmen, wenn ich „Berührungshunger" habe.'
+ text: 'Liebe Gabriela, wieder zu Hause möchte ich dir nochmals recht herzlich danken für die wundervolle Massage. Auf dem Nachhauseweg im Zug hatte ich den Eindruck, dass alle Menschen, denen ich begegnet bin, mir meine Zufriedenheit ansehen würden. Es hat sich absolut gelohnt, diesen langen Weg mit ÖV zu machen! Ich habe mich bei dir und in deinem wunderschönen Raum während der ganzen Massage super aufgehoben und wohl gefühlt und mich total entspannen können. Alles war stimmig und du strahlst eine so tolle Wärme und Energie aus. Es war ein einmaliges Erlebnis, das ich so noch nie erfahren habe, ich freue mich darauf, dein Angebot wieder einmal in Anspruch zu nehmen, wenn ich „Berührungshunger" habe.'
  },
  {
  name: '',
  context: 'Kombinierte Massage & Gespräch',
- text: 'Liebe Gabriela, ich möchte dir nochmals ganz herzlich danken für diese wahnsinnig angenehme und nachklingende Massage, die du gestern für mich persönlich kombiniert hast aus deinen vielen Massageformen. Dieses Mal hast du glaub auch mehr aus der Thaimassage, deine neue Passion, eingebaut, das fühlte sich super an. Ich wünsche dir viel Erfolg damit! Ich habe einmal mehr erleben dürfen, wie gross dein Repertoire und deine Erfahrung sind und wie spontan-intuitiv du sein kannst in deiner „Arbeit". Du lebst deine Berufung, das ist so spürbar und so viel Wert in der heutigen Zeit. Auch das anschliessende Gespräch hat mir wirklich gut getan und es haben sich grad einige Knoten gelöst in mir drin quasi von selbst. Ich werde dich sehr gerne und mit Überzeugung weiterempfehlen!'
+ text: 'Liebe Gabriela, ich möchte dir nochmals ganz herzlich danken für diese wahnsinnig angenehme und nachklingende Massage, die du gestern für mich persönlich kombiniert hast aus deinen vielen Massageformen. Dieses Mal hast du glaub auch mehr aus der Thaimassage, deine neue Passion, eingebaut, das fühlte sich super an. Ich wünsche dir viel Erfolg damit! Ich habe einmal mehr erleben dürfen, wie gross dein Repertoire und deine Erfahrung sind. Du lebst deine Berufung, das ist so spürbar und so viel Wert in der heutigen Zeit. Auch das anschliessende Gespräch hat mir wirklich gut getan und es haben sich grad einige Knoten gelöst in mir drin quasi von selbst. Ich werde dich sehr gerne und mit Überzeugung weiterempfehlen!'
  },
  {
  name: 'Selina',

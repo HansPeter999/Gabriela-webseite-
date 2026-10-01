@@ -96,9 +96,11 @@ function Header({ route, navigate }) {
  const [open, setOpen] = useState(false);
  const links = [
  { id: 'home', label: 'Start' },
+ { id: 'einladung', label: 'Einladung', anchor: true },
  { id: 'angebote', label: 'Angebote' },
  { id: 'ueber-mich', label: 'Über mich' },
  { id: 'testimonials', label: 'Stimmen' },
+ { id: 'praxisraum', label: 'Praxisraum' },
  { id: 'kontakt', label: 'Kontakt' },
  ];
  const isActive = (id) => {
@@ -120,7 +122,22 @@ function Header({ route, navigate }) {
  {links.map(l => (
  <a key={l.id}
  className={isActive(l.id) ? 'active' : ''}
- onClick={() => { navigate(l.id); setOpen(false); }}>
+ onClick={() => {
+ setOpen(false);
+ if (!l.anchor) { navigate(l.id); return; }
+ const go = () => {
+ const el = document.getElementById(l.id);
+ if (!el) return false;
+ const y = el.getBoundingClientRect().top + window.scrollY - 90;
+ window.scrollTo({ top: y, behavior: 'smooth' });
+ return true;
+ };
+ if (route !== 'home') {
+ navigate('home');
+ let tries = 0;
+ const t = setInterval(() => { if (go() || ++tries > 30) clearInterval(t); }, 60);
+ } else go();
+ }}>
  {l.label}
  </a>
  ))}
@@ -140,16 +157,21 @@ function Footer({ navigate }) {
  <div className="container">
  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 48 }}>
  <div>
- <h4>frei fühlen</h4>
- <p className="footer-tag">
- Eine kleine, persönliche Praxis für Berührung, Begegnung und Atem.
- </p>
+ <span className="col-label">frei fühlen</span>
+ <div className="footer-block">
+ Eine persönliche und einladende Praxis für Berührung, Begegnung und Atem.
+ </div>
+ <div className="footer-block" style={{ marginTop: 16 }}>
+ Mitglied des Fachverband <a href="https://source-massage-fachschule.ch/" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', textUnderlineOffset: 3 }}>Source Bodywork</a>
+ </div>
  </div>
  <div>
  <span className="col-label">Praxis</span>
  <div className="footer-block">
  Gabriela Rätzo<br/>
-  6422 Steinen
+  Praxisgemeinschaft<br/>
+  Schlagstrasse 66<br/>
+  6417 Sattel
  </div>
  </div>
  <div>
@@ -166,6 +188,7 @@ function Footer({ navigate }) {
  <a onClick={() => navigate('ueber-mich')} style={{ cursor: 'pointer' }}>Über mich</a>
  <a onClick={() => navigate('testimonials')} style={{ cursor: 'pointer' }}>Stimmen</a>
  <a onClick={() => navigate('kontakt')} style={{ cursor: 'pointer' }}>Kontakt</a>
+ <a onClick={() => navigate('empfehlungen')} style={{ cursor: 'pointer' }}>Empfehlungen</a>
  </div>
  </div>
  </div>
